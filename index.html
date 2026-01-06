@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Enlaces - LRJ</title>
+    <style>
+        /* --- ESTILOS GENERALES Y FONDO GLITCH --- */
+        body {
+            background-color: #050505; 
+            background-image: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.2) 0px,
+                rgba(0, 0, 0, 0.2) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+            background-size: 100% 4px;
+            animation: scanlineMove 15s linear infinite;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            user-select: none; 
+            /* Esto ayuda a que el toque en móviles reaccione más rápido visualmente */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #ff0000; 
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            background-color: #000;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-section {
+            background-color: #000000;
+            padding: 40px 20px 30px;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .links-section {
+            background: linear-gradient(180deg, #000000 0%, #2a0000 100%);
+            padding: 30px 20px 40px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff0000;
+            margin-bottom: 15px;
+            background-color: #333;
+            box-shadow: 0 0 25px rgba(200, 0, 0, 0.6);
+            animation: latido 3s infinite ease-in-out;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 0 0 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.3);
+        }
+
+        p {
+            color: #cccccc;
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .link-btn {
+            display: block;
+            background-color: #0a0a0a;
+            color: white;
+            padding: 16px 20px;
+            margin: 12px 0;
+            text-decoration: none;
+            border: 1px solid #ff0000;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            position: relative;
+            transition: background-color 0.2s;
+        }
+
+        .link-btn:hover, .link-btn:active {
+            background-color: #1a0000;
+            animation: glitch-spasm 0.4s steps(2) infinite both;
+            cursor: pointer;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.7rem;
+            color: #777;
+        }
+
+        @keyframes scanlineMove {
+            from { background-position: 0 0; }
+            to { background-position: 0 100%; }
+        }
+
+        @keyframes latido {
+            0% { transform: scale(1); box-shadow: 0 0 25px rgba(200, 0, 0, 0.6); }
+            50% { transform: scale(1.03); box-shadow: 0 0 50px rgba(255, 0, 0, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 25px rgba(200, 0, 0, 0.6); }
+        }
+
+        @keyframes glitch-spasm {
+            0% { transform: translate(0); text-shadow: none; }
+            20% { transform: translate(-2px, 1px); text-shadow: 2px 0 #00ffff, -2px 0 #ff0000; }
+            40% { transform: translate(1px, -1px); text-shadow: -1px 0 #00ffff, 1px 0 #ff0000; background-color: #ff0000; color: #000; }
+            60% { transform: translate(0); text-shadow: none; }
+            80% { transform: translate(2px, 2px); text-shadow: 2px 0 #00ffff, -2px 0 #ff0000; }
+            100% { transform: translate(0); text-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="sound-hover" src="glitch.mp3" preload="auto"></audio>
+    <audio id="sound-click" src="click.mp3" preload="auto"></audio>
+
+    <div class="card-container">
+        
+        <div class="header-section">
+            <img src="foto.jpg" alt="Foto de Perfil" class="profile-pic">
+            <h1>LR JEFFERS</h1>
+            <p>Autor de Romance Paranormal, Dark & Thriller.<br>Accediendo al sistema...</p>
+        </div>
+
+        <div class="links-section">
+            <a href="http://amazon.com/author/lrjeffers" class="link-btn sonido-click">📚 Mis Libros en Amazon</a>
+
+            <a href="https://ldsserie.wixsite.com/lrjeffers" class="link-btn sonido-click">🌐 Mi Sitio Web Oficial</a>
+                
+            <a href="https://patreon.com/LRJeffers90" class="link-btn sonido-click">🖤 Patreon (Contenido Exclusivo)</a>
+                
+            <a href="https://www.instagram.com/lrjeffers90" class="link-btn sonido-click">📸 Instagram</a>
+        
+            <a href="https://www.facebook.com/LRJeffers1" class="link-btn sonido-click">👓 Facebook</a>
+                
+            <a href="https://chat.whatsapp.com/FjANQ6AsuOp86eWFM172G6" class="link-btn sonido-click">📲 Grupo de WhatsApp </a>
+
+            <a href="https://www.tiktok.com/@lrj_90t" class="link-btn sonido-click">🎵 TikTok</a>
+            
+            <div class="footer">
+                SYSTEM ID: LRJ-2025 // AUDIO ENABLED
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const hoverSound = document.getElementById('sound-hover');
+        const clickSound = document.getElementById('sound-click');
+        const buttons = document.querySelectorAll('.sonido-click');
+
+        // Configuración de volumen
+        hoverSound.volume = 0.2; 
+        clickSound.volume = 0.5; 
+
+        buttons.forEach(button => {
+            
+            // Sonido de "Hover" (Solo funcionará bien en PC)
+            button.addEventListener('mouseenter', () => {
+                hoverSound.currentTime = 0;
+                // Intentamos reproducir, si falla (bloqueo navegador) no hacemos nada
+                let playPromise = hoverSound.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {});
+                }
+            });
+
+            // EL TRUCO PARA MÓVIL (Click con retraso)
+            button.addEventListener('click', (e) => {
+                // 1. Detenemos la navegación inmediata
+                e.preventDefault();
+                
+                // 2. Reproducimos el sonido
+                clickSound.currentTime = 0;
+                clickSound.play().catch(error => {
+                    // Si el audio falla, navegamos igual
+                    window.location = button.href;
+                });
+
+                // 3. Esperamos 400 milisegundos (casi medio segundo) y luego navegamos
+                setTimeout(() => {
+                    window.location = button.href;
+                }, 400);
+            });
+        });
+    </script>
+
+</body>
+</html>
